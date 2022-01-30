@@ -4,6 +4,7 @@ import Link from "next/link";
 import {navbar_links} from "../../helpers/navbar_links";
 import Image from "next/image";
 import SearchInput from "../SearchInput/SearchInput";
+import MenuButton from "../MenuButton/MenuButton";
 
 const Navbar = () => {
     return (
@@ -13,7 +14,6 @@ const Navbar = () => {
             </h1>
             <ul className='nav-links'>
                 {navbar_links.map((item, index) => {
-                    console.log(item.href)
                     return (
                         <li className='nav-link' key={index}>
                             <Link href={item.href}>
@@ -29,6 +29,7 @@ const Navbar = () => {
             <div className='nav-search'>
                 <SearchInput/>
             </div>
+            <MenuButton/>
         </NavbarStyled>
     );
 };
