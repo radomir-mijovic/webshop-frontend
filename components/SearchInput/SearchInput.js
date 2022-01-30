@@ -1,18 +1,14 @@
 import React from 'react';
 import {SearchInputStyled} from "./SearchInputStyled";
-import Image from "next/image";
+import {BsSearch} from "react-icons/bs";
 
-const SearchInput = () => {
+const SearchInput = ({height}) => {
     return (
-        <SearchInputStyled>
-            <input type="text" placeholder='Name / Brand / Code'/>
+        <SearchInputStyled height={height}>
             <div className="search-icon">
-                <Image
-                    width='17'
-                    height='17'
-                    src="/assets/icons/search.svg"
-                    alt="search icon"/>
+                <BsSearch/>
             </div>
+            <input type="text" placeholder='search by name, code or brand'/>
         </SearchInputStyled>
     );
 };

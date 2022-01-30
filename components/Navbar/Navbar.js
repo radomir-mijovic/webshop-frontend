@@ -9,26 +9,35 @@ import {AnimatePresence} from "framer-motion";
 
 const Navbar = () => {
     const [isSidebar, setIsSidebar] = useState(false)
+    const [isActiveClass, setIsActiveClass] = useState(0)
     const [isActive, setIsActive] = useState(false)
+
+    function menuHandler() {
+        setIsSidebar(false)
+        setIsActive(false)
+    }
 
     return (
         <NavbarStyled>
-            <h1>
-                MyShop
-            </h1>
+            <Link href='/' passHref>
+                <h1 onClick={menuHandler}>
+                    MyShop
+                </h1>
+            </Link>
             <ul className='nav-links'>
                 {navbar_links.map((item, index) => {
                     return (
-                        <li className='nav-link' key={index}>
-                            <Link href={item.href}>
+                        <Link key={index} href={item.href} passHref>
+                            <li onClick={() => setIsActiveClass(index)}
+                                className={isActiveClass === index ? 'nav-link active' : 'nav-link'}>
                                 {item.title}
-                            </Link>
-                        </li>
+                            </li>
+                        </Link>
                     )
                 })}
-                <li className='nav-link'>
-                    Brands
-                </li>
+                {/*<li className='nav-link'>*/}
+                {/*    Brands*/}
+                {/*</li>*/}
             </ul>
             <div className='nav-search'>
                 <SearchInput/>
@@ -39,8 +48,9 @@ const Navbar = () => {
                 setIsSidebar={setIsSidebar}/>
             <AnimatePresence>
                 {isSidebar && <Sidebar
-                    setIsActive={setIsActive}
-                    setIsSidebar={setIsSidebar}/>}
+                    isActiveClass={isActiveClass}
+                    setIsActiveClass={setIsActiveClass}
+                    menuHandler={menuHandler}/>}
             </AnimatePresence>
         </NavbarStyled>
     );

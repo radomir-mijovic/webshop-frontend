@@ -40,7 +40,7 @@ export const MenuButtonStyled = styled.div`
     right: 70%;
   }
 
-  @media (min-width: 851px) {
+  @media (min-width: 786px) {
     display: none;
   }
 `

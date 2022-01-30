@@ -3,13 +3,22 @@ import {SidebarStyled} from "./SidebarStyled";
 import {navbar_links} from "../../helpers/navbar_links";
 import Link from "next/link";
 import SearchInput from "../SearchInput/SearchInput";
+import {motion} from "framer-motion";
 
-const Sidebar = ({setIsSidebar, setIsActive}) => {
+const Sidebar = ({menuHandler, isActiveClass, setIsActiveClass}) => {
 
-    function sidebarHandler() {
-        setIsSidebar(false)
-        setIsActive(false)
+    const variants = {
+        visible: i => ({
+            opacity: 1,
+            transition: {
+                delay: i * .3
+            }
+        }),
+        hidden: {
+            opacity: 0
+        }
     }
+
 
     return (
         <SidebarStyled
@@ -17,19 +26,29 @@ const Sidebar = ({setIsSidebar, setIsActive}) => {
             animate={{opacity: 1, x: 0}}
             transition={{duration: .4}}
             exit={{opacity: 0, x: '-100%'}}>
-            <SearchInput/>
-            {navbar_links.map((item, index) => {
-                return (
-                    <Link passHref
-                        href={item.href}
-                        key={index}>
-                        <h2 onClick={sidebarHandler}>
-                            {item.title}
-                        </h2>
-                    </Link>
-                )
-            })}
-            <h2 onClick={sidebarHandler}>Brands</h2>
+            <SearchInput height={'4rem'}/>
+            <div className="links">
+                {navbar_links.map((item, index) => {
+                    return (
+                        <Link passHref
+                              href={item.href}
+                              key={index}>
+                            <motion.h2
+                                className={isActiveClass === index ? 'link_h2 active' : 'link_h2'}
+                                custom={index}
+                                variants={variants}
+                                initial='hidden'
+                                animate='visible'
+                                onClick={() => {
+                                    setIsActiveClass(index)
+                                    menuHandler();
+                                }}>
+                                {item.title}
+                            </motion.h2>
+                        </Link>
+                    )
+                })}
+            </div>
         </SidebarStyled>
     );
 };

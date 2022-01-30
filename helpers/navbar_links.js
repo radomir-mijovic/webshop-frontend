@@ -13,5 +13,10 @@ export const navbar_links = [
         id: 3,
         title: 'Contact Us',
         href: '/contact'
-    }
+    },
+    // {
+    //     id: 4,
+    //     title: 'Brands',
+    //     href: '/#'
+    // }
 ]

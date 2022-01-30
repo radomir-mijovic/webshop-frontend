@@ -26,13 +26,25 @@ export const NavbarStyled = styled.nav`
     font-size: 2rem;
     cursor: pointer;
     margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: color .5s ease;
     
-    > a {
-      color: #FFFF;
+    :hover {
+      color: #00577F;
     }
   }
   
-  @media (max-width: 850px) {
+  .nav-search {
+    width: 25rem;
+  }
+  
+  .active {
+    color: #00577F;
+  }
+  
+  @media (max-width: 785px) {
     .nav-links,
     .nav-search {
       display: none;
