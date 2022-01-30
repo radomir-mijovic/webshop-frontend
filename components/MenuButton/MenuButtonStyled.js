@@ -9,6 +9,7 @@ export const MenuButtonStyled = styled.div`
   justify-content: space-between;
   position: relative;
   cursor: pointer;
+  z-index: 3;
   
   .item {
     width: 100%;

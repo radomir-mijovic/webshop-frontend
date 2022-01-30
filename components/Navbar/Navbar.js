@@ -1,12 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {NavbarStyled} from "./NavbarStyled";
 import Link from "next/link";
 import {navbar_links} from "../../helpers/navbar_links";
-import Image from "next/image";
 import SearchInput from "../SearchInput/SearchInput";
 import MenuButton from "../MenuButton/MenuButton";
+import Sidebar from "../Sidebar/Sidebar";
+import {AnimatePresence} from "framer-motion";
 
 const Navbar = () => {
+    const [isSidebar, setIsSidebar] = useState(false)
+    const [isActive, setIsActive] = useState(false)
+
     return (
         <NavbarStyled>
             <h1>
@@ -29,7 +33,15 @@ const Navbar = () => {
             <div className='nav-search'>
                 <SearchInput/>
             </div>
-            <MenuButton/>
+            <MenuButton
+                isActive={isActive}
+                setIsActive={setIsActive}
+                setIsSidebar={setIsSidebar}/>
+            <AnimatePresence>
+                {isSidebar && <Sidebar
+                    setIsActive={setIsActive}
+                    setIsSidebar={setIsSidebar}/>}
+            </AnimatePresence>
         </NavbarStyled>
     );
 };

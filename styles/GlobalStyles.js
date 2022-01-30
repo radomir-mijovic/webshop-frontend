@@ -17,6 +17,8 @@ export const GlobalStyles = createGlobalStyle`
     width: 100%;
     height: 100%;
     -webkit-tap-highlight-color: transparent;
+    position: relative;
+    font-family: 'Playfair Display', serif;
   }
 
   ul {

@@ -9,6 +9,7 @@ export const SearchInputStyled = styled.div`
     padding: .5rem 2rem;
     border: none;
     border-radius: 1.5rem;
+    outline: none;
   }
 
   .search-icon {
