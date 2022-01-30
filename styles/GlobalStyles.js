@@ -18,4 +18,12 @@ export const GlobalStyles = createGlobalStyle`
     height: 100%;
     -webkit-tap-highlight-color: transparent;
   }
+
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
 `
