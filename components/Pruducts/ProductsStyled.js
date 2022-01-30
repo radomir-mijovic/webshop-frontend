@@ -9,13 +9,19 @@ export const ProductsStyled = styled(motion.main)`
   margin-top: .5rem;
   
   .item {
-    background: grey;
+    position: relative;
   }
   
   .item:first-child,
   .item:nth-of-type(3n + 1){
     grid-column: span 2;
     grid-row: span 2;
+  }
+  
+  .black-opacity {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
   }
   
   @media (max-width: 850px) {

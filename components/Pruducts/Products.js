@@ -1,21 +1,36 @@
 import React from 'react';
 import {ProductsStyled} from "./ProductsStyled";
+import {motion} from "framer-motion";
 
-const Products = () => {
+const Products = ({products}) => {
+
+    const variants = {
+        animate: i => ({
+            opacity: 1,
+            transition: {
+                delay: i * .1
+            }
+        }),
+        initial: {
+            opacity: 0
+        }
+    }
+
     return (
         <ProductsStyled>
-            <div className="item">1</div>
-            <div className="item">2</div>
-            <div className="item">3</div>
-            <div className="item">4</div>
-            <div className="item">5</div>
-            <div className="item">6</div>
-            <div className="item">7</div>
-            <div className="item">8</div>
-            <div className="item">9</div>
-            <div className="item">10</div>
-            <div className="item">11</div>
-            <div className="item">12</div>
+            {products.map((product, index) => {
+                return (
+                    <motion.div
+                        custom={index}
+                        variants={variants}
+                        animate='animate'
+                        initial='initial'
+                        key={index}
+                        className='item'>
+                        <div className="black-opacity"/>
+                    </motion.div>
+                )
+            })}
         </ProductsStyled>
     );
 };

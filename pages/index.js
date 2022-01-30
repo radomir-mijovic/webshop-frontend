@@ -5,7 +5,7 @@ export default function Home({products}) {
 
     return (
         <>
-            <Products/>
+            <Products products={products}/>
         </>
     )
 }
