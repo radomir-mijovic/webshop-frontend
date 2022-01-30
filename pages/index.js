@@ -1,14 +1,11 @@
 import axios from "axios";
+import Products from "../components/Pruducts/Products";
 
 export default function Home({products}) {
 
     return (
         <>
-            {products.map(item => {
-                return (
-                   <li key={item.name}>{item.name}</li>
-                )
-            })}
+            <Products/>
         </>
     )
 }
