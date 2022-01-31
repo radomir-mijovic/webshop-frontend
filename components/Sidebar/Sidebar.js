@@ -4,8 +4,10 @@ import {navbar_links} from "../../helpers/navbar_links";
 import Link from "next/link";
 import SearchInput from "../SearchInput/SearchInput";
 import {motion} from "framer-motion";
+import {useProductContext} from "../../context/product_context";
 
 const Sidebar = ({menuHandler, isActiveClass, setIsActiveClass}) => {
+    const {getAll} = useProductContext()
 
     const variants = {
         visible: i => ({
@@ -40,8 +42,9 @@ const Sidebar = ({menuHandler, isActiveClass, setIsActiveClass}) => {
                                 initial='hidden'
                                 animate='visible'
                                 onClick={() => {
-                                    setIsActiveClass(index)
+                                    setIsActiveClass(index);
                                     menuHandler();
+                                    getAll();
                                 }}>
                                 {item.title}
                             </motion.h2>

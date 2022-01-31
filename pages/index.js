@@ -1,11 +1,8 @@
 import axios from "axios";
 import Products from "../components/Pruducts/Products";
-import useSWR from 'swr'
+
 
 export default function Home() {
-
-    const fetcher = url => axios.get(url).then(res => res.data)
-
 
     return (
         <>
