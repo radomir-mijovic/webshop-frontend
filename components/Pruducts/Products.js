@@ -3,8 +3,10 @@ import {ProductsStyled} from "./ProductsStyled";
 import {motion} from "framer-motion";
 import Image from "next/image";
 import Link from 'next/link'
+import {useStyleContext} from "../../context/style_context";
 
 const Products = ({products}) => {
+    const {setIsActiveClass} = useStyleContext()
 
     const variants = {
         animate: i => ({
@@ -21,10 +23,10 @@ const Products = ({products}) => {
     return (
         <ProductsStyled>
             {products.map((product, index) => {
-                console.log(product.image)
                 return (
-                    <Link key={index} href='/' passHref>
+                    <Link key={index} href={`/product/${product.id}`} passHref>
                         <motion.div
+                            onClick={() => setIsActiveClass(undefined)}
                             custom={index}
                             variants={variants}
                             animate='animate'

@@ -7,10 +7,11 @@ import MenuButton from "../MenuButton/MenuButton";
 import Sidebar from "../Sidebar/Sidebar";
 import {AnimatePresence} from "framer-motion";
 import Cart from "../Cart/Cart";
+import {useStyleContext} from "../../context/style_context";
 
 const Navbar = () => {
+    const {isActiveClass, setIsActiveClass} = useStyleContext()
     const [isSidebar, setIsSidebar] = useState(false)
-    const [isActiveClass, setIsActiveClass] = useState(0)
     const [isActive, setIsActive] = useState(false)
 
     function menuHandler() {
@@ -40,9 +41,6 @@ const Navbar = () => {
                         </Link>
                     )
                 })}
-                {/*<li className='nav-link'>*/}
-                {/*    Brands*/}
-                {/*</li>*/}
             </ul>
             <div className='nav-search'>
                 <SearchInput/>

@@ -11,11 +11,19 @@ export default function Home({products}) {
 }
 
 export async function getServerSideProps() {
-    const response = await axios.get('http://127.0.0.1:8000/api/products')
-
-    return {
-        props: {
-            products: response.data
+    try {
+        const response = await axios.get('http://127.0.0.1:8000/api/products')
+        return {
+            props: {
+                products: response.data
+            }
         }
     }
+
+    catch (e) {
+        return {
+            notFound: true
+        }
+    }
+
 }
