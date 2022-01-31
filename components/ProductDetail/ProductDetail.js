@@ -1,14 +1,26 @@
 import React, {useState} from 'react';
 import Image from "next/image";
 import {BiPlus, BiMinus, BiCart} from "react-icons/bi";
+import {useCartContext} from "../../context/cart_context";
 import {
     AddToCartButton,
     ProductDetailStyled,
     Quantity
 } from "./ProductDetailStyled";
 
+
 const ProductDetail = ({product}) => {
-    const [quantity, setQuantity] = useState(3)
+    const [quantity, setQuantity] = useState(1)
+    const {addToCart} = useCartContext()
+
+    function addToCartHandler() {
+        addToCart(
+            product.name,
+            product.image,
+            product.price,
+            quantity)
+    }
+
 
     function quantityMinusHandler() {
         if (quantity === 1){
@@ -55,7 +67,7 @@ const ProductDetail = ({product}) => {
                         <h2 className='quantity__h2'>{quantity}</h2>
                         <BiPlus onClick={quantityPlusHandler}/>
                     </Quantity>
-                    <AddToCartButton>
+                    <AddToCartButton onClick={addToCartHandler}>
                         <BiCart/>
                         Add to cart
                     </AddToCartButton>

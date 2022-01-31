@@ -3,9 +3,12 @@ import {CartButton, CartStyled} from "./CartStyled";
 import {FaOpencart} from "react-icons/fa";
 import {GrClose} from "react-icons/gr";
 import {AnimatePresence, motion} from "framer-motion";
+import {useCartContext} from "../../context/cart_context";
 
 const Cart = () => {
     const [isCard, setIsCard] = useState(false)
+    const {cartProducts} = useCartContext()
+    console.log(cartProducts)
 
     return (
         <CartStyled>

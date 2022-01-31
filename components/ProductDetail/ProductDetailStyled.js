@@ -17,7 +17,10 @@ export const ProductDetailStyled = styled.main`
 
     > p {
       font-size: 1.6rem;
+      font-weight: 300;
       margin-bottom: 1rem;
+      line-height: 2.5rem;
+      font-family: "Open Sans", serif;
     }
   }
 
@@ -94,7 +97,8 @@ export const AddToCartButton = styled.button`
   color: #FFFF;
   font-size: 1.4rem;
   font-weight: 600;
-  
+  cursor: pointer;
+
   > svg {
     fill: #FFFF;
     width: 2rem;
