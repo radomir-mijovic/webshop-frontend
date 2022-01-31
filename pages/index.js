@@ -1,11 +1,17 @@
 import axios from "axios";
 import Products from "../components/Pruducts/Products";
+import Head from "next/head";
 
 
 export default function Home() {
 
     return (
         <>
+            <Head>
+                <title>
+                    Web-Shop
+                </title>
+            </Head>
             <Products/>
         </>
     )
