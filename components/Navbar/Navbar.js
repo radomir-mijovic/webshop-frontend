@@ -43,7 +43,7 @@ const Navbar = () => {
                 })}
             </ul>
             <div className='nav-search'>
-                <SearchInput/>
+                <SearchInput setIsSidebar={setIsSidebar}/>
             </div>
             <MenuButton
                 isActive={isActive}

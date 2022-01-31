@@ -4,9 +4,11 @@ import {motion} from "framer-motion";
 import Image from "next/image";
 import Link from 'next/link'
 import {useStyleContext} from "../../context/style_context";
+import {useProductContext} from "../../context/product_context";
 
-const Products = ({products}) => {
+const Products = () => {
     const {setIsActiveClass} = useStyleContext()
+    const {isProducts} = useProductContext()
 
     const variants = {
         animate: i => ({
@@ -20,9 +22,15 @@ const Products = ({products}) => {
         }
     }
 
+    if (isProducts.length === 0) {
+        return (
+            <h1>No product found</h1>
+        )
+    }
+
     return (
         <ProductsStyled>
-            {products.map((product, index) => {
+            {isProducts.map((product, index) => {
                 return (
                     <Link key={index} href={`/product/${product.slug}`} passHref>
                         <motion.div
