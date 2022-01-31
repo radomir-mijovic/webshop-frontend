@@ -13,7 +13,6 @@ import {useProductContext} from "../../context/product_context";
 const Navbar = () => {
     const {isActiveClass, setIsActiveClass} = useStyleContext()
     const {getAll, isSidebar, setIsSidebar} = useProductContext()
-    // const [isSidebar, setIsSidebar] = useState(false)
     const [isActive, setIsActive] = useState(false)
 
     function menuHandler() {

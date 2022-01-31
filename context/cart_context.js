@@ -4,12 +4,7 @@ import {cart_reducer} from "../reducer/cart_reducer";
 const CartContext = React.createContext()
 
 const initialState = {
-    product: {
-        name: '',
-        image: '',
-        brand: '',
-        price: '',
-    }
+    products: []
 }
 
 export const CartProvider = ({children}) => {
