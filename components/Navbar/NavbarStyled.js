@@ -7,7 +7,7 @@ export const NavbarStyled = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 clamp(.5rem, 2.7vw, 5rem);
+  padding: 0 clamp(1rem, 3vw, 7rem);
 
   
   > h1 {
