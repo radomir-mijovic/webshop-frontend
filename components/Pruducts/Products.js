@@ -24,7 +24,7 @@ const Products = ({products}) => {
         <ProductsStyled>
             {products.map((product, index) => {
                 return (
-                    <Link key={index} href={`/product/${product.id}`} passHref>
+                    <Link key={index} href={`/product/${product.slug}`} passHref>
                         <motion.div
                             onClick={() => setIsActiveClass(undefined)}
                             custom={index}

@@ -5,7 +5,7 @@ const ProductDetailPage = ({product}) => {
 
     return (
         <div>
-            detail page
+            {product.name}
         </div>
     );
 };
@@ -31,5 +31,4 @@ export async function getServerSideProps(context) {
             }
         }
     }
-
 }
