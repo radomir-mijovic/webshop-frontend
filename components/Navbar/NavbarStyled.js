@@ -45,6 +45,7 @@ export const NavbarStyled = styled.nav`
   }
   
   @media (max-width: 785px) {
+    > h1,
     .nav-links,
     .nav-search {
       display: none;

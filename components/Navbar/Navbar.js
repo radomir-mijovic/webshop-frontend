@@ -6,6 +6,7 @@ import SearchInput from "../SearchInput/SearchInput";
 import MenuButton from "../MenuButton/MenuButton";
 import Sidebar from "../Sidebar/Sidebar";
 import {AnimatePresence} from "framer-motion";
+import Cart from "../Cart/Cart";
 
 const Navbar = () => {
     const [isSidebar, setIsSidebar] = useState(false)
@@ -20,7 +21,11 @@ const Navbar = () => {
     return (
         <NavbarStyled>
             <Link href='/' passHref>
-                <h1 onClick={menuHandler}>
+                <h1 onClick={() => {
+                    setIsSidebar(false);
+                    setIsActive(false);
+                    setIsActiveClass(0)
+                }}>
                     MyShop
                 </h1>
             </Link>
@@ -46,6 +51,7 @@ const Navbar = () => {
                 isActive={isActive}
                 setIsActive={setIsActive}
                 setIsSidebar={setIsSidebar}/>
+            <Cart/>
             <AnimatePresence>
                 {isSidebar && <Sidebar
                     isActiveClass={isActiveClass}

@@ -9,6 +9,7 @@ export const SidebarStyled = styled(motion.div)`
   height: 100%;
   background: #C67486;
   padding: 15rem 7rem;
+  z-index: 2;
 
   > :first-child {
     margin-bottom: 7rem;
