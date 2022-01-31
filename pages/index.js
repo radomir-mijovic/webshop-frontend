@@ -1,11 +1,12 @@
 import axios from "axios";
 import Products from "../components/Pruducts/Products";
 
-export default function Home({products}) {
+
+export default function Home() {
 
     return (
         <>
-            <Products products={products}/>
+            <Products/>
         </>
     )
 }

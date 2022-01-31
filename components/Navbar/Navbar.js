@@ -8,10 +8,12 @@ import Sidebar from "../Sidebar/Sidebar";
 import {AnimatePresence} from "framer-motion";
 import Cart from "../Cart/Cart";
 import {useStyleContext} from "../../context/style_context";
+import {useProductContext} from "../../context/product_context";
 
 const Navbar = () => {
     const {isActiveClass, setIsActiveClass} = useStyleContext()
-    const [isSidebar, setIsSidebar] = useState(false)
+    const {getAll, isSidebar, setIsSidebar} = useProductContext()
+    // const [isSidebar, setIsSidebar] = useState(false)
     const [isActive, setIsActive] = useState(false)
 
     function menuHandler() {
@@ -25,7 +27,8 @@ const Navbar = () => {
                 <h1 onClick={() => {
                     setIsSidebar(false);
                     setIsActive(false);
-                    setIsActiveClass(0)
+                    setIsActiveClass(0);
+                    getAll()
                 }}>
                     MyShop
                 </h1>
