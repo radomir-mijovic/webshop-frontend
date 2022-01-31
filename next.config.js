@@ -1,3 +1,9 @@
 module.exports = {
-  reactStrictMode: true,
+    reactStrictMode: true,
+    images: {
+        domains: [
+            'nordhealth-webshop.s3.amazonaws.com'
+        ]
+    }
+
 }

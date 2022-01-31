@@ -6,10 +6,14 @@ export const ProductsStyled = styled(motion.main)`
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(25rem, auto);
   grid-gap: .5rem;
-  margin-top: .5rem;
   
   .item {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
   }
   
   .item:first-child,
@@ -18,10 +22,24 @@ export const ProductsStyled = styled(motion.main)`
     grid-row: span 2;
   }
   
+  .product-name {
+    color: #FFFF;
+    z-index: 3;
+    font-size: clamp(3rem, 4vw, 4rem);
+  }
+  
+  .product-brand {
+    color: #FFFF;
+    z-index: 3;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+  
   .black-opacity {
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, .7);
+    background: rgba(0, 0, 0, .3);
+    position: absolute;
+    z-index: 2;
   }
   
   @media (max-width: 850px) {
