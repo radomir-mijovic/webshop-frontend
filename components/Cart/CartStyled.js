@@ -3,13 +3,14 @@ import {motion} from "framer-motion";
 
 export const CartStyled = styled.div`
   z-index: 3;
-  cursor: pointer;
   position: relative;
+  height: auto;
 
   > svg {
     height: 2.5rem;
     width: 2.5rem;
     fill: #FFFF;
+    cursor: pointer;
   }
   
   .items-qty {
@@ -25,7 +26,7 @@ export const CartStyled = styled.div`
   .cart {
     position: absolute;
     width: 30rem;
-    height: 20rem;
+    height: auto;
     right: 5%;
     top: 6rem;
     //border: 1px solid #00577F;
@@ -49,6 +50,31 @@ export const CartStyled = styled.div`
       fill: #00577F;
       height: 1.5rem;
       width: 1.5rem;
+      cursor: pointer;
+    }
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 1rem 0;
+    color: #00577F;
+    
+    >svg {
+      height: 2rem;
+      width: 2rem;
+      cursor: pointer;
+    }
+  }
+  
+  .product-info {
+    display: flex;
+    flex-direction: column;
+    
+    .price-span {
+      margin-left: 1rem;
+      color: #F5AD92;
     }
   }
 `

@@ -11,6 +11,17 @@ export const CartProvider = ({children}) => {
     const [state, dispatch] = useReducer(cart_reducer, initialState)
 
     function addToCart(name, image, price, quantity) {
+        // state.cartProducts.filter(item => {
+        //     if (item.name === name) {
+        //         dispatch({
+        //             type: 'UPDATE_QUANTITY',
+        //             payload: {
+        //                 name,
+        //                 quantity
+        //             }
+        //         })
+        //     }})
+
         const product = {
             name,
             image,
@@ -23,10 +34,18 @@ export const CartProvider = ({children}) => {
         })
     }
 
+    function removeProduct(name) {
+        dispatch({
+            type: 'REMOVE_PRODUCT',
+            payload: name
+        })
+    }
+
     return (
         <CartContext.Provider value={{
             ...state,
             addToCart,
+            removeProduct
         }}>
             {children}
         </CartContext.Provider>
