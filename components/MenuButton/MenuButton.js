@@ -1,11 +1,18 @@
 import React from 'react';
 import {MenuButtonStyled} from "./MenuButtonStyled";
+import {useStyleContext} from "../../context/style_context";
+import {useProductContext} from "../../context/product_context";
+import {useCartContext} from "../../context/cart_context";
 
-const MenuButton = ({setIsSidebar, isActive, setIsActive}) => {
+const MenuButton = () => {
+    const {isActive, setIsActive} = useStyleContext()
+    const {setIsSidebar} = useProductContext()
+    const {setIsCard} = useCartContext()
 
     function menuHandler() {
         setIsActive(prevState => !prevState)
         setIsSidebar(prevState => !prevState)
+        setIsCard(false)
     }
 
     return (

@@ -67,7 +67,9 @@ const ProductDetail = ({product}) => {
                         <h2 className='quantity__h2'>{quantity}</h2>
                         <BiPlus onClick={quantityPlusHandler}/>
                     </Quantity>
-                    <AddToCartButton onClick={addToCartHandler}>
+                    <AddToCartButton
+                        whileTap={{scale: .95}}
+                        onClick={addToCartHandler}>
                         <BiCart/>
                         Add to cart
                     </AddToCartButton>

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {SearchInputStyled} from "./SearchInputStyled";
+import {SearchButton, SearchInputStyled} from "./SearchInputStyled";
 import {BsSearch} from "react-icons/bs";
 import {useProductContext} from "../../context/product_context";
 import {useRouter} from "next/router";
@@ -8,13 +8,14 @@ import {useStyleContext} from "../../context/style_context";
 const SearchInput = ({height}) => {
     const [isText, setIsText] = useState('')
     const {setIsSidebar, filterProductHandler} = useProductContext()
-    const {setIsActiveClass} = useStyleContext()
+    const {setIsActiveClass, setIsActive} = useStyleContext()
     const router = useRouter()
 
     function searchHandler() {
         filterProductHandler(isText)
         setIsText('')
         setIsSidebar(false)
+        setIsActive(false)
         setIsActiveClass(0)
         router.replace('/')
     }
@@ -28,10 +29,14 @@ const SearchInput = ({height}) => {
                 value={isText}
                 onChange={e => setIsText(e.target.value)}
                 type="text"
-                placeholder='search...'/>
-            <button onClick={searchHandler} type='button'>
-                search
-            </button>
+               />
+            <SearchButton
+                disabled={isText === '' && true}
+                whileTap={{scale: .9}}
+                onClick={searchHandler}
+                type='button'>
+                Search
+            </SearchButton>
         </SearchInputStyled>
     );
 };

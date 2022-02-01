@@ -5,9 +5,13 @@ import Link from "next/link";
 import SearchInput from "../SearchInput/SearchInput";
 import {motion} from "framer-motion";
 import {useProductContext} from "../../context/product_context";
+import {useStyleContext} from "../../context/style_context";
+import {useCartContext} from "../../context/cart_context";
 
-const Sidebar = ({menuHandler, isActiveClass, setIsActiveClass}) => {
+const Sidebar = ({menuHandler}) => {
     const {getAll} = useProductContext()
+    const {isActiveClass, setIsActiveClass} = useStyleContext()
+    const {setIsCard} = useCartContext()
 
     const variants = {
         visible: i => ({
@@ -45,6 +49,7 @@ const Sidebar = ({menuHandler, isActiveClass, setIsActiveClass}) => {
                                     setIsActiveClass(index);
                                     menuHandler();
                                     getAll();
+                                    setIsCard(false)
                                 }}>
                                 {item.title}
                             </motion.h2>

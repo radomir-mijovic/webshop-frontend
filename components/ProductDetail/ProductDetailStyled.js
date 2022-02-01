@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {motion} from "framer-motion";
 
 export const ProductDetailStyled = styled.main`
   width: 100%;
@@ -84,7 +85,7 @@ export const Quantity = styled.div`
   }
 `
 
-export const AddToCartButton = styled.button`
+export const AddToCartButton = styled(motion.button)`
   display: flex;
   align-items: center;
   justify-content: space-around;

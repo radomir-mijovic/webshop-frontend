@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {motion} from "framer-motion";
 
 export const SearchInputStyled = styled.div`
   position: relative;
@@ -29,4 +30,12 @@ export const SearchInputStyled = styled.div`
       height: 2rem;
     }
   }
+`
+
+export const SearchButton = styled(motion.button)`
+  padding: .3rem 1rem;
+  border: none;
+  background: #F5AD92;
+  color: #FFFF;
+  border-radius: 1.4rem;
 `

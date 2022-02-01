@@ -21,6 +21,7 @@ export const CartStyled = styled.div`
     > h2 {
       color: #00577F;
     }
+    
   }
   
   .cart {
@@ -29,7 +30,6 @@ export const CartStyled = styled.div`
     height: auto;
     right: 5%;
     top: 6rem;
-    //border: 1px solid #00577F;
     border-radius: .5rem;
     box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
     background: #FFFF;
@@ -43,13 +43,13 @@ export const CartStyled = styled.div`
     padding: 1rem 2rem;
     
     > h1 {
-      color: #00577F;
+      color: #F5AD92;
     }
     
     > svg {
-      fill: #00577F;
-      height: 1.5rem;
-      width: 1.5rem;
+      fill: #F5AD92;
+      height: 2.3rem;
+      width: 2.3rem;
       cursor: pointer;
     }
   }
@@ -77,8 +77,38 @@ export const CartStyled = styled.div`
       color: #F5AD92;
     }
   }
+  
+  .empty-cart {
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #F5AD92;
+    
+    > svg {
+      height: 2.3rem;
+      width: 2.3rem;
+      fill: #F5AD92;
+    }
+  }
+  
+  .checkout-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+  }
 `
 
 export const CartButton = styled(motion.button)`
-  
+  width: 70%;
+  height: 4rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 2rem;
+  background: #F5AD92;
+  color: #FFFF;
+  font-size: 1.6rem;
+  letter-spacing: .3rem;
 `

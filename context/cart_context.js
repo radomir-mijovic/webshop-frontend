@@ -1,4 +1,4 @@
-import React, {useContext, useReducer} from "react";
+import React, {useContext, useReducer, useState} from "react";
 import {cart_reducer} from "../reducer/cart_reducer";
 
 const CartContext = React.createContext()
@@ -9,19 +9,9 @@ const initialState = {
 
 export const CartProvider = ({children}) => {
     const [state, dispatch] = useReducer(cart_reducer, initialState)
+    const [isCard, setIsCard] = useState(false)
 
     function addToCart(name, image, price, quantity) {
-        // state.cartProducts.filter(item => {
-        //     if (item.name === name) {
-        //         dispatch({
-        //             type: 'UPDATE_QUANTITY',
-        //             payload: {
-        //                 name,
-        //                 quantity
-        //             }
-        //         })
-        //     }})
-
         const product = {
             name,
             image,
@@ -45,7 +35,9 @@ export const CartProvider = ({children}) => {
         <CartContext.Provider value={{
             ...state,
             addToCart,
-            removeProduct
+            removeProduct,
+            isCard,
+            setIsCard
         }}>
             {children}
         </CartContext.Provider>
