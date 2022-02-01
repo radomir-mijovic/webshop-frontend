@@ -64,7 +64,7 @@ const ProductDetail = ({product}) => {
                 <div className="buttons">
                     <Quantity>
                         <BiMinus onClick={quantityMinusHandler}/>
-                        <h2 className='quantity__h2'>{quantity}</h2>
+                        <h2>{quantity}</h2>
                         <BiPlus onClick={quantityPlusHandler}/>
                     </Quantity>
                     <AddToCartButton

@@ -47,7 +47,7 @@ export const ProductDetailStyled = styled.main`
   }
 
   @media (max-width: 500px) {
-    //padding: 0 2rem;
+    
     .buttons {
       flex-direction: column;
       padding: 0 2.5rem;
@@ -62,14 +62,14 @@ export const Quantity = styled.div`
   background: #00577F;
   width: 15rem;
   height: 4rem;
-  //padding: 0 2rem;
   border: none;
   border-radius: .5rem;
 
   > h2 {
     font-size: 2rem;
     color: #FFFF;
-    height: 100%;
+    //height: 100%;
+
   }
 
   > svg {

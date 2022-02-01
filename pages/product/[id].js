@@ -2,18 +2,23 @@ import React from 'react';
 import axios from "axios";
 import Head from "next/head";
 import ProductDetail from "../../components/ProductDetail/ProductDetail";
+import {motion} from "framer-motion";
 
 const ProductDetailPage = ({product}) => {
 
     return (
-        <>
+        <motion.main
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{duration: .7}}
+            exit={{opacity: 0}}>
             <Head>
                 <title>
                     {product.name}
                 </title>
             </Head>
             <ProductDetail product={product}/>
-        </>
+        </motion.main>
     );
 };
 

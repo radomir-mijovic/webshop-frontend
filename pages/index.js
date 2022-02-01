@@ -3,6 +3,7 @@ import Products from "../components/Pruducts/Products";
 import Head from "next/head";
 import {useProductContext} from "../context/product_context";
 import {useEffect} from "react";
+import {motion} from "framer-motion";
 
 
 export default function Home() {
@@ -18,14 +19,18 @@ export default function Home() {
     }, [isSidebar])
 
     return (
-        <>
+        <motion.main
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{duration: .7}}
+            exit={{opacity: 0}}>
             <Head>
                 <title>
                     Web-Shop
                 </title>
             </Head>
             <Products/>
-        </>
+        </motion.main>
     )
 }
 
