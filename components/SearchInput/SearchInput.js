@@ -4,10 +4,12 @@ import {BsSearch} from "react-icons/bs";
 import {useProductContext} from "../../context/product_context";
 import {useRouter} from "next/router";
 import {useStyleContext} from "../../context/style_context";
+import {useCartContext} from "../../context/cart_context";
 
 const SearchInput = ({height}) => {
     const [isText, setIsText] = useState('')
     const {setIsSidebar, filterProductHandler} = useProductContext()
+    const {setIsCard} = useCartContext()
     const {setIsActiveClass, setIsActive} = useStyleContext()
     const router = useRouter()
 
@@ -27,7 +29,10 @@ const SearchInput = ({height}) => {
             </div>
             <input
                 value={isText}
-                onChange={e => setIsText(e.target.value)}
+                onChange={e => {
+                    setIsText(e.target.value)
+                    setIsCard(false)
+                }}
                 type="text"
                />
             <SearchButton

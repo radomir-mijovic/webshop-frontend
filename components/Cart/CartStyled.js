@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {motion} from "framer-motion";
 
 export const CartStyled = styled.div`
-  z-index: 3;
+  z-index: 15;
   position: relative;
   height: auto;
 

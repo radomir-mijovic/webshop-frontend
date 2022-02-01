@@ -23,6 +23,7 @@ const Navbar = () => {
                     setIsSidebar(false);
                     setIsActive(false);
                     setIsActiveClass(0);
+                    setIsCard(false)
                     getAll()
                 }}>
                     MyShop
