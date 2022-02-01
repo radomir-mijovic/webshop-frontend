@@ -6,7 +6,6 @@ export const StyleProvider = ({children}) => {
     const [isActiveClass, setIsActiveClass] = useState(0)
     const [isActive, setIsActive] = useState(false)
 
-
     return (
         <StyleContext.Provider value={{
             isActiveClass,

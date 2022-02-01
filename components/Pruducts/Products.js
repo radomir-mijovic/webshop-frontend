@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from 'next/link'
 import {useStyleContext} from "../../context/style_context";
 import {useProductContext} from "../../context/product_context";
+import NoProducts from "../NoProducts/NoProducts";
 
 const Products = () => {
     const {setIsActiveClass} = useStyleContext()
@@ -24,7 +25,7 @@ const Products = () => {
 
     if (isProducts.length === 0) {
         return (
-            <h1>No product found</h1>
+            <NoProducts/>
         )
     }
 

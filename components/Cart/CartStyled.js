@@ -43,11 +43,11 @@ export const CartStyled = styled.div`
     padding: 1rem 2rem;
     
     > h1 {
-      color: #F5AD92;
+      color: #00577F;
     }
     
     > svg {
-      fill: #F5AD92;
+      fill: #00577F;
       height: 2.3rem;
       width: 2.3rem;
       cursor: pointer;
@@ -83,7 +83,7 @@ export const CartStyled = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    color: #F5AD92;
+    color: #00577F;
     
     > svg {
       height: 2.3rem;

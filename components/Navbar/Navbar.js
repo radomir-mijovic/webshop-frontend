@@ -16,11 +16,6 @@ const Navbar = () => {
     const {getAll, isSidebar, setIsSidebar} = useProductContext()
     const {setIsCard} = useCartContext()
 
-    function menuHandler() {
-        setIsSidebar(false)
-        setIsActive(false)
-    }
-
     return (
         <NavbarStyled>
             <Link href='/' passHref>
@@ -54,7 +49,7 @@ const Navbar = () => {
             <MenuButton/>
             <Cart/>
             <AnimatePresence>
-                {isSidebar && <Sidebar menuHandler={menuHandler}/>}
+                {isSidebar && <Sidebar/>}
             </AnimatePresence>
         </NavbarStyled>
     );

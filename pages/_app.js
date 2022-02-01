@@ -6,13 +6,14 @@ import {ProductProvider} from "../context/product_context";
 
 
 function MyApp({Component, pageProps}) {
+
     return (
         <StyleProvider>
             <CartProvider>
-                <GlobalStyles/>
                 <ProductProvider pageProps={pageProps}>
-                <Navbar/>
-                <Component {...pageProps} />
+                    <GlobalStyles/>
+                    <Navbar/>
+                    <Component {...pageProps} />
                 </ProductProvider>
             </CartProvider>
         </StyleProvider>

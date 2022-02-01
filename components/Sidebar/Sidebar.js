@@ -8,9 +8,9 @@ import {useProductContext} from "../../context/product_context";
 import {useStyleContext} from "../../context/style_context";
 import {useCartContext} from "../../context/cart_context";
 
-const Sidebar = ({menuHandler}) => {
-    const {getAll} = useProductContext()
-    const {isActiveClass, setIsActiveClass} = useStyleContext()
+const Sidebar = () => {
+    const {getAll, setIsSidebar} = useProductContext()
+    const {isActiveClass, setIsActiveClass, setIsActive} = useStyleContext()
     const {setIsCard} = useCartContext()
 
     const variants = {
@@ -47,9 +47,10 @@ const Sidebar = ({menuHandler}) => {
                                 animate='visible'
                                 onClick={() => {
                                     setIsActiveClass(index);
-                                    menuHandler();
                                     getAll();
                                     setIsCard(false)
+                                    setIsSidebar(false)
+                                    setIsActive(false)
                                 }}>
                                 {item.title}
                             </motion.h2>

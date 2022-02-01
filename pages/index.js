@@ -1,9 +1,21 @@
 import axios from "axios";
 import Products from "../components/Pruducts/Products";
 import Head from "next/head";
+import {useProductContext} from "../context/product_context";
+import {useEffect} from "react";
 
 
 export default function Home() {
+    const {isSidebar} = useProductContext()
+
+    useEffect(() => {
+        if (isSidebar) {
+            document.body.style.overflowY = "hidden"
+        }
+        else if(!isSidebar) {
+            document.body.style.overflowY = "auto"
+        }
+    }, [isSidebar])
 
     return (
         <>
