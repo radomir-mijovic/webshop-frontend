@@ -20,6 +20,10 @@ export const GlobalStyles = createGlobalStyle`
     position: relative;
     font-family: 'Playfair Display', serif;
   }
+  
+  input {
+    font-family: 'Playfair Display', serif;
+  }
 
   ul {
     list-style: none;

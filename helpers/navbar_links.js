@@ -16,7 +16,7 @@ export const navbar_links = [
     // },
     {
         id: 4,
-        title: 'Add New Product',
+        title: 'New Product',
         href: '/add-new-product'
     }
 ]

@@ -45,7 +45,7 @@ const ProductDetail = ({product}) => {
                     // quality={100}
                     // layout='responsive'
                     // objectFit='cover'
-                    src={product.image}
+                    src={product.image === null ? '/assets/no_image.png' : product.image}
                     alt='product image'/>
             </div>
             <div className="product-info">

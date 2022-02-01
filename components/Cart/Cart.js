@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {CartButton, CartStyled} from "./CartStyled";
 import {FaOpencart} from "react-icons/fa";
 import {AnimatePresence, motion} from "framer-motion";
@@ -50,7 +50,7 @@ const Cart = () => {
                                     <Image
                                         width={50}
                                         height={50}
-                                        src={image}
+                                        src={image === null ? '/assets/no_image.png' : image}
                                         alt='item image'/>
                                     <div className="product-info">
                                         <h2>{name}</h2>

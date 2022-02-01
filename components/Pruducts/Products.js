@@ -45,7 +45,7 @@ const Products = () => {
                             <Image
                                 layout='fill'
                                 objectFit='cover'
-                                src={product.image}
+                                src={product.image === null ? '/assets/no_image.png' : product.image}
                                 alt='product image'/>
                             <h1 className='product-name'>
                                 {product.name}

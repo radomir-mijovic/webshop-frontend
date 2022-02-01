@@ -3,24 +3,27 @@ import {motion} from "framer-motion";
 
 export const AddNewProductFormStyled = styled.main`
   width: 100%;
-  height: 90vh;
+  height: auto;
   position: relative;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
 
-  > form {
-    top: 0;
+  .form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 60rem;
-    height: 50rem;
+    height: auto;
     gap: 1rem;
     flex-wrap: wrap;
     margin: 5rem 2rem;
     padding: 2rem 0;
-
+  }
+  
+  .input-form {
+    margin: 1rem 0;
+    flex-wrap: wrap;
   }
 
   .input {
@@ -35,7 +38,10 @@ export const AddNewProductFormStyled = styled.main`
     background: transparent;
     border-bottom: 2px solid #F5AD92;
     color: black;
-    margin-top: 1rem;
+  }
+  
+  input[type='file'] {
+    display: none;
   }
   
   .error-msg {
@@ -47,6 +53,18 @@ export const AddNewProductFormStyled = styled.main`
     font-size: 2rem;
     color: black;
   }
+  
+  .label-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    
+    > svg {
+      margin-left: 2rem;
+    }
+    
+  }
 `
 
 export const FormButton = styled(motion.button)`
@@ -56,5 +74,14 @@ export const FormButton = styled(motion.button)`
   border-radius: 1.5rem;
   color: #FFFF;letter-spacing: .1rem;
   font-size: 2rem;
-  margin: 0 2rem;
+  margin: 2rem 2rem;
+  cursor: pointer;
+`
+
+export const FormH1 = styled.h1`
+  font-size: 3rem;
+  color: #F5AD92;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
 `
