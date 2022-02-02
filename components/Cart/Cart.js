@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {CartButton, CartStyled} from "./CartStyled";
 import {FaOpencart} from "react-icons/fa";
-import {AnimatePresence, motion} from "framer-motion";
+import {AnimatePresence, motion, useAnimation} from "framer-motion";
 import {useCartContext} from "../../context/cart_context";
 import {BiTrash, BiSad} from "react-icons/bi";
 import {VscClose} from "react-icons/vsc";
 import Image from "next/image";
 
 const Cart = () => {
+    const controls = useAnimation()
     const {
         cartProducts,
         removeProduct,
@@ -24,10 +25,22 @@ const Cart = () => {
         return itemTotal
     }
 
+    useEffect(() => {
+        controls.start({
+            scale: 1
+        })
+    }, [cartProducts.length])
+
     return (
         <CartStyled>
             <div className="items-qty">
-                {cartProducts.length > 0 && <h2>{cartProducts.length}</h2>}
+                {cartProducts.length > 0 &&
+                <motion.h2
+                initial={{scale: 1.5}}
+                animate={controls}
+                transition={{duration: .5}}>
+                    {cartProducts.length}
+                </motion.h2>}
             </div>
             <FaOpencart onClick={() => setIsCard(prevState => !prevState)}/>
             <AnimatePresence>

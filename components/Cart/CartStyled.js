@@ -21,7 +21,6 @@ export const CartStyled = styled.div`
     > h2 {
       color: #00577F;
     }
-    
   }
   
   .cart {
