@@ -38,7 +38,7 @@ export default ProductDetailPage;
 export async function getServerSideProps(context) {
     try {
         const id = context.query.id
-        const response = await axios.get(`http://127.0.0.1:8000/api/product/${id}`)
+        const response = await axios.get(`https://nordhealth.herokuapp.com/api/product/${id}`)
 
         return {
             props: {

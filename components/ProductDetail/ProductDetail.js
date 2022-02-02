@@ -59,7 +59,7 @@ const ProductDetail = ({product}) => {
                     {product.description}
                 </p>
                 <h1 className='price'>
-                    {product.price}.00 €
+                    {product.price} €
                 </h1>
                 <div className="buttons">
                     <Quantity>

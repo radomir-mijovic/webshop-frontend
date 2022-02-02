@@ -18,7 +18,7 @@ const AddNewProductForm = () => {
 
     const fetcher = url => axios.get(url).then(res => res.data)
     const {mutate} = useSWRConfig()
-    useSWR('http://127.0.0.1:8000/api/products', fetcher)
+    useSWR('https://nordhealth.herokuapp.com/api/products', fetcher)
 
 
     const initialValues = {
@@ -40,8 +40,8 @@ const AddNewProductForm = () => {
         formData.append('image', imageUrl)
 
         try {
-            await axios.post('http://127.0.0.1:8000/api/products', formData)
-            mutate('http://127.0.0.1:8000/api/products').then(r =>  setIsProducts(r))
+            await axios.post('https://nordhealth.herokuapp.com/api/products', formData)
+            mutate('https://nordhealth.herokuapp.com/api/products').then(r =>  setIsProducts(r))
             setIsActiveClass(0)
             router.replace('/')
 

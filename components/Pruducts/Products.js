@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {ProductsStyled} from "./ProductsStyled";
 import {motion} from "framer-motion";
 import Image from "next/image";
@@ -6,6 +6,7 @@ import Link from 'next/link'
 import {useStyleContext} from "../../context/style_context";
 import {useProductContext} from "../../context/product_context";
 import NoProducts from "../NoProducts/NoProducts";
+import SomethingWentWrong from "../SomethingWentWrong/SomethingWentWrong";
 
 const Products = () => {
     const {setIsActiveClass} = useStyleContext()
@@ -24,7 +25,7 @@ const Products = () => {
     }
 
     if (!isProducts) {
-        return <h1>Something went wrong!</h1>
+        return <SomethingWentWrong/>
     }
 
     if (isProducts.length === 0) {

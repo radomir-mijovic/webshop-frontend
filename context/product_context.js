@@ -12,7 +12,7 @@ export const ProductProvider = ({children, pageProps}) => {
 
     async function filterProductHandler(text) {
         try {
-            const response = await axios.get(`http://127.0.0.1:8000/api/products?search=${text}`)
+            const response = await axios.get(`https://nordhealth.herokuapp.com/api/products?search=${text}`)
             setIsProducts(response.data)
         }
         catch (e) {
@@ -23,7 +23,7 @@ export const ProductProvider = ({children, pageProps}) => {
 
     async function getAll() {
         try {
-            const response = await axios.get('http://127.0.0.1:8000/api/products')
+            const response = await axios.get('https://nordhealth.herokuapp.com/api/products')
             setIsProducts(response.data)
         }
         catch (e) {

@@ -55,9 +55,9 @@ const Cart = () => {
                                     <div className="product-info">
                                         <h2>{name}</h2>
                                         <h2>
-                                            {price}.00 x {quantity}
+                                            {price} x {quantity}
                                             <span className='price-span'>
-                                                {productTotal(price, quantity)}.00 €
+                                                {productTotal(price, quantity).toFixed(2)} €
                                             </span>
                                         </h2>
                                     </div>
@@ -77,7 +77,7 @@ const Cart = () => {
                             <>
                                 <div className="cart-info">
                                     <h1>Total</h1>
-                                    <h1>{totals.reduce((a, b) => a + b)}</h1>
+                                    <h1>{totals.reduce((a, b) => a + b).toFixed(2)} €</h1>
                                 </div>
                                 <div className="checkout-btn">
                                     <CartButton whileTap={{scale: .95}}>
