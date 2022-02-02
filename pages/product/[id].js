@@ -1,10 +1,21 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import axios from "axios";
 import Head from "next/head";
 import ProductDetail from "../../components/ProductDetail/ProductDetail";
 import {motion} from "framer-motion";
+import {useProductContext} from "../../context/product_context";
 
 const ProductDetailPage = ({product}) => {
+    const {isSidebar} = useProductContext()
+
+    useEffect(() => {
+        if (isSidebar) {
+            document.body.style.overflowY = "hidden"
+        }
+        else if(!isSidebar) {
+            document.body.style.overflowY = "auto"
+        }
+    }, [isSidebar])
 
     return (
         <motion.main

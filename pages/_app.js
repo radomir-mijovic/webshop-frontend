@@ -7,7 +7,6 @@ import {AnimatePresence} from "framer-motion";
 
 
 function MyApp({Component, pageProps}) {
-    //TODO make cart scrollable
 
     return (
         <StyleProvider>

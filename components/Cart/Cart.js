@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {CartButton, CartStyled} from "./CartStyled";
 import {FaOpencart} from "react-icons/fa";
 import {AnimatePresence, motion} from "framer-motion";
