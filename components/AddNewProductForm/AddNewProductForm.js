@@ -47,8 +47,7 @@ const AddNewProductForm = () => {
             setIsActiveClass(0)
             setIsModalMsg('Product added successfully')
             setIsModal(true)
-            router.replace('/')
-
+            router.push('/')
         } catch (e) {
             if (e.response.data) {
                 for (const [key, value] of Object.entries(e.response.data)) {
