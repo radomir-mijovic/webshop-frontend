@@ -1,6 +1,7 @@
 import React, {useContext, useState} from "react";
 import axios from "axios";
 import {useRouter} from "next/router";
+import {useModalContext} from "./modal_context";
 
 const ProductContext = React.createContext()
 
@@ -8,6 +9,7 @@ export const ProductProvider = ({children, pageProps}) => {
     const {products} = pageProps
     const [isProducts, setIsProducts] = useState(products)
     const [isSidebar, setIsSidebar] = useState(false)
+    const {setIsModalMsg, setIsModal} = useModalContext()
     const router = useRouter()
 
     async function filterProductHandler(text) {
@@ -16,6 +18,8 @@ export const ProductProvider = ({children, pageProps}) => {
             setIsProducts(response.data)
         }
         catch (e) {
+            setIsModalMsg('Something went wrong, please try again latter')
+            setIsModal(true)
             router.replace('/')
         }
 

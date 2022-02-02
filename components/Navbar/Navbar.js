@@ -10,11 +10,14 @@ import Cart from "../Cart/Cart";
 import {useStyleContext} from "../../context/style_context";
 import {useProductContext} from "../../context/product_context";
 import {useCartContext} from "../../context/cart_context";
+import AlertModal from "../AlertModal/AlertModal";
+import {useModalContext} from "../../context/modal_context";
 
 const Navbar = () => {
     const {isActiveClass, setIsActiveClass, setIsActive} = useStyleContext()
     const {getAll, isSidebar, setIsSidebar} = useProductContext()
     const {setIsCard} = useCartContext()
+    const {isModal} = useModalContext()
 
     return (
         <NavbarStyled>
@@ -51,6 +54,7 @@ const Navbar = () => {
             <Cart/>
             <AnimatePresence>
                 {isSidebar && <Sidebar/>}
+                {isModal && <AlertModal/>}
             </AnimatePresence>
         </NavbarStyled>
     );

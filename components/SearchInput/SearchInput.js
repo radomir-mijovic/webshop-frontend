@@ -11,6 +11,7 @@ const SearchInput = ({height}) => {
     const {setIsSidebar, filterProductHandler} = useProductContext()
     const {setIsCard} = useCartContext()
     const {setIsActiveClass, setIsActive} = useStyleContext()
+
     const router = useRouter()
 
     function searchHandler() {

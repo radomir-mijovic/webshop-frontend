@@ -9,11 +9,13 @@ import {useRouter} from "next/router";
 import useSWR, {useSWRConfig} from "swr";
 import {useStyleContext} from "../../context/style_context";
 import {useProductContext} from "../../context/product_context";
+import {useModalContext} from "../../context/modal_context";
 
 const AddNewProductForm = () => {
     const [imageUrl, setImageUrl] = useState('')
     const {setIsActiveClass} = useStyleContext()
     const {setIsProducts} = useProductContext()
+    const {setIsModalMsg, setIsModal} = useModalContext()
     const router = useRouter()
 
     const fetcher = url => axios.get(url).then(res => res.data)
@@ -43,10 +45,17 @@ const AddNewProductForm = () => {
             await axios.post('https://nordhealth.herokuapp.com/api/products', formData)
             mutate('https://nordhealth.herokuapp.com/api/products').then(r =>  setIsProducts(r))
             setIsActiveClass(0)
+            setIsModalMsg('Product added successfully')
+            setIsModal(true)
             router.replace('/')
 
         } catch (e) {
-            console.log(e.response.data)
+            if (e.response.data) {
+                for (const [key, value] of Object.entries(e.response.data)) {
+                    setIsModalMsg(value[0])
+                    setIsModal(true)
+                }
+            }
             return
         }
     }
