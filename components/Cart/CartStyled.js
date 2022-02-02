@@ -27,7 +27,10 @@ export const CartStyled = styled.div`
   .cart {
     position: absolute;
     width: 30rem;
-    height: auto;
+    max-height: 35rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    white-space: nowrap;
     right: 5%;
     top: 6rem;
     border-radius: .5rem;

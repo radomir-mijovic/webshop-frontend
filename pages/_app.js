@@ -8,7 +8,6 @@ import {AnimatePresence} from "framer-motion";
 
 function MyApp({Component, pageProps}) {
     //TODO make cart scrollable
-    //TODO fix navbar link on Ipad
 
     return (
         <StyleProvider>
