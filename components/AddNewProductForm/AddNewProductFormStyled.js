@@ -61,9 +61,12 @@ export const AddNewProductFormStyled = styled.main`
     cursor: pointer;
     
     > svg {
-      margin-left: 2rem;
+      margin: 0 2rem;
     }
-    
+  }
+  
+  .image__h2 {
+    font-size: 1.4rem;
   }
 `
 

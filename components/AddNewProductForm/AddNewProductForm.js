@@ -30,6 +30,7 @@ const AddNewProductForm = () => {
     }
 
     async function submitHandler(values) {
+
         const formData = new FormData()
         formData.append('name', values.name)
         formData.append('brand', values.brand)
@@ -37,11 +38,13 @@ const AddNewProductForm = () => {
         formData.append('price', values.price)
         formData.append('code', values.code)
         formData.append('image', imageUrl)
+
         try {
             await axios.post('http://127.0.0.1:8000/api/products', formData)
             mutate('http://127.0.0.1:8000/api/products').then(r =>  setIsProducts(r))
             setIsActiveClass(0)
             router.replace('/')
+
         } catch (e) {
             console.log(e.response.data)
             return
@@ -112,6 +115,10 @@ const AddNewProductForm = () => {
                                 onChange={e => setImageUrl(e.target.files[0])}
                                 type='file'
                                 accept="image/*"/>
+                                {imageUrl &&
+                                <h2 className='image__h2'>
+                                    {imageUrl.name}
+                                </h2>}
                             </label>
                         </div>
 
@@ -120,6 +127,7 @@ const AddNewProductForm = () => {
                             type='submit'>
                             Add
                         </FormButton>
+
                     </Form>
                 </Formik>
             </AddNewProductFormStyled>

@@ -23,10 +23,13 @@ const Products = () => {
         }
     }
 
+    if (!isProducts) {
+        return <h1>Something went wrong!</h1>
+    }
+
     if (isProducts.length === 0) {
-        return (
-            <NoProducts/>
-        )
+        return <NoProducts/>
+
     }
 
     return (

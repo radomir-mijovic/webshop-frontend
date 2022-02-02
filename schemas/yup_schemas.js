@@ -18,6 +18,7 @@ export const validationSchema = yup.object({
         .min(4, 'Code must be at least 4 character long')
         .max(20, 'Maximum is 20 characters'),
     price: yup.number()
+        .required('Price is required')
         .min(9, 'Minimum price is 9 euros')
         .max(2000, 'Maximum price is 2000 euros')
 })

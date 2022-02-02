@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {CartButton, CartStyled} from "./CartStyled";
 import {FaOpencart} from "react-icons/fa";
 import {AnimatePresence, motion} from "framer-motion";
@@ -15,14 +15,14 @@ const Cart = () => {
         setIsCard
     } = useCartContext()
 
+
+    let totals = []
+
     function productTotal(price, quantity) {
-        return price * quantity
+        const itemTotal = price * quantity
+        totals = [...totals, itemTotal]
+        return itemTotal
     }
-
-    function total(price, quantity) {
-        return productTotal(price, quantity).reduce((a, b) => a + b)
-    }
-
 
     return (
         <CartStyled>
@@ -77,7 +77,7 @@ const Cart = () => {
                             <>
                                 <div className="cart-info">
                                     <h1>Total</h1>
-                                    <h1>{}</h1>
+                                    <h1>{totals.reduce((a, b) => a + b)}</h1>
                                 </div>
                                 <div className="checkout-btn">
                                     <CartButton whileTap={{scale: .95}}>
