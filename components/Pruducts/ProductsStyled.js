@@ -34,6 +34,12 @@ export const ProductsStyled = styled(motion.main)`
     z-index: 3;
     font-size: clamp(1.5rem, 4vw, 2.5rem);
   }
+
+  .product-code {
+    color: #FFFF;
+    z-index: 3;
+    font-size: clamp(1rem, 2vw, 2rem);
+  }
   
   .black-opacity {
     width: 100%;

@@ -57,6 +57,9 @@ const Products = () => {
                             <h3 className='product-brand'>
                                 {product.brand}
                             </h3>
+                            <h3 className='product-code'>
+                                {product.code}
+                            </h3>
                         </motion.div>
                     </Link>
                 )
