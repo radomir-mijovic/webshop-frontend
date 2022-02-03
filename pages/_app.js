@@ -5,9 +5,21 @@ import {CartProvider} from "../context/cart_context";
 import {ProductProvider} from "../context/product_context";
 import {AnimatePresence} from "framer-motion";
 import {ModalProvider} from "../context/modal_context";
+import {useState} from "react";
+import TopBarProgress from "react-topbar-progress-indicator";
+import {Router} from "next/router";
 
 
 function MyApp({Component, pageProps}) {
+    const [isProgressBar, setIsProgressBar] = useState(false)
+
+    Router.events.on('routeChangeStart', () => {
+        setIsProgressBar(true)
+    })
+
+    Router.events.on('routeChangeComplete', () => {
+        setIsProgressBar(false)
+    })
 
     return (
         <StyleProvider>
@@ -16,6 +28,7 @@ function MyApp({Component, pageProps}) {
                     <ProductProvider pageProps={pageProps}>
                         <GlobalStyles/>
                         <Navbar/>
+                            {isProgressBar && <TopBarProgress/>}
                         <AnimatePresence
                             initial={false}
                             exitBeforeEnter>

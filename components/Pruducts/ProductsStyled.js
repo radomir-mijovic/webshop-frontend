@@ -6,6 +6,7 @@ export const ProductsStyled = styled(motion.main)`
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(25rem, auto);
   grid-gap: .5rem;
+  margin-bottom: .2rem;
   
   .item {
     position: relative;
