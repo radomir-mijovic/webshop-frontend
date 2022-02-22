@@ -23,6 +23,7 @@ class MyDocument extends Document {
     }
 }
 
+//for preload of side without flickering
 MyDocument.getInitialProps = async (ctx) => {
     const sheet = new ServerStyleSheet()
     const originalRenderPage = ctx.renderPage
